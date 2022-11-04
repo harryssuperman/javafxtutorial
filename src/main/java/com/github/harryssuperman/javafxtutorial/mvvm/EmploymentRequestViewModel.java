@@ -1,4 +1,4 @@
-package com.github.harryssuperman.mvvm;
+package com.github.harryssuperman.javafxtutorial.mvvm;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;

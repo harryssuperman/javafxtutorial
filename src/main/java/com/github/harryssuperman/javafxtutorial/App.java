@@ -1,4 +1,4 @@
-package com.github.harryssuperman;
+package com.github.harryssuperman.javafxtutorial;
 
 /**
  * Hello world!

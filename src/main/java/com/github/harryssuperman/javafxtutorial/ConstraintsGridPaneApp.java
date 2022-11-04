@@ -1,17 +1,20 @@
-package com.github.harryssuperman;
+package com.github.harryssuperman.javafxtutorial;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class ComplexGridPaneApp extends Application {
+public class ConstraintsGridPaneApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -34,9 +37,13 @@ public class ComplexGridPaneApp extends Application {
         TextField tfContract = new TextField();
 
         Label lblPriority = new Label("Priority");
-        ObservableList<String> priorities =
-                FXCollections.observableArrayList("Medium", "High", "Low");
-        ComboBox<String> cbPriority = new ComboBox<>(priorities);
+        RadioButton rbMedium = new RadioButton("Medium");
+        RadioButton rbHigh = new RadioButton("High");
+        RadioButton rbLow = new RadioButton("Low");
+        VBox priorityVBox = new VBox();
+        priorityVBox.setSpacing(2);
+        GridPane.setVgrow(priorityVBox, Priority.SOMETIMES);
+        priorityVBox.getChildren().addAll(lblPriority, rbMedium, rbHigh, rbLow);
 
         Label lblSeverity = new Label("Severity");
         ObservableList<String> severities = FXCollections.observableArrayList("Blocker", "Workaround", "N/A");
@@ -52,29 +59,44 @@ public class ComplexGridPaneApp extends Application {
         Label lblDescription = new Label("Description");
         TextArea taDescription = new TextArea();
 
-        gp.add(lblTitle, 1, 0);  // empty item at 0,0
+        gp.add(lblTitle, 0, 0);
 
         gp.add(lblEmail, 0, 1);
-        gp.add(tfEmail, 1, 1);
-        gp.add(lblContract, 4, 1);
-        gp.add(tfContract, 5, 1);
+        gp.add(tfEmail, 0, 2);
 
-        gp.add(lblPriority, 0, 2);
-        gp.add(cbPriority, 1, 2);
-        gp.add(lblSeverity, 2, 2);
-        gp.add(cbSeverity, 3, 2);
-        gp.add(lblCategory, 4, 2);
-        gp.add(cbCategory, 5, 2);
+        gp.add(lblContract, 0, 3);
+        gp.add(tfContract, 0, 4);
 
-        gp.add(lblProblem, 0, 3);
-        gp.add(tfProblem, 1, 3);
-        gp.add(lblDescription, 0, 4);
-        gp.add(taDescription, 1, 4);
+        gp.add(priorityVBox, 0, 5);
 
-        GridPane.setColumnSpan(lblTitle, 5);
-        GridPane.setColumnSpan(tfEmail, 3);
-        GridPane.setColumnSpan(tfProblem, 5);
-        GridPane.setColumnSpan(taDescription, 5);
+        gp.add(lblSeverity, 1, 5);
+        gp.add(cbSeverity, 1, 6);
+        gp.add(lblCategory, 1, 7);
+        gp.add(cbCategory, 1, 8);
+
+        gp.add(lblProblem, 0, 9);
+        gp.add(tfProblem, 0, 10);
+
+        gp.add(lblDescription, 0, 11);
+        gp.add(taDescription, 0, 12);
+
+        GridPane.setColumnSpan(tfEmail, 2);
+        GridPane.setColumnSpan(tfContract, 2);
+        GridPane.setColumnSpan(tfProblem, 2);
+
+        GridPane.setRowSpan(priorityVBox, 4);
+
+        gp.setConstraints(taDescription,
+                0, 12,
+                2, 1,
+                HPos.LEFT, VPos.TOP,
+                Priority.SOMETIMES, Priority.ALWAYS);
+
+        ColumnConstraints col1 = new ColumnConstraints();
+        col1.setPercentWidth(50);
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setPercentWidth(50);
+        gp.getColumnConstraints().addAll(col1, col2);
 
         Separator sep = new Separator(); // hr
 
@@ -95,8 +117,8 @@ public class ComplexGridPaneApp extends Application {
 
         primaryStage.setTitle("Grid Pane App");
         primaryStage.setScene(scene);
-        primaryStage.setWidth(736);
-        primaryStage.setHeight(414);
+        primaryStage.setWidth(414);
+        primaryStage.setHeight(736);
         primaryStage.show();
 
     }

@@ -11,7 +11,9 @@
     <name>javafxtutorial</name>
     <url>https://github.com/harryssuperman/javafxtutorial</url>
     <developers>
-        <developer><id>harryssuperman</id></developer>
+        <developer>
+            <id>harryssuperman</id>
+        </developer>
     </developers>
 
     <properties>
@@ -60,7 +62,7 @@
                             <index>true</index>
                             <manifest>
                                 <addClasspath>true</addClasspath>
-                                <mainClass>com.github.harryssuperman.ComplexGridPaneApp</mainClass>
+                                <mainClass>com.github.harryssuperman.javafxtutorial.ComplexGridPaneApp</mainClass>
                             </manifest>
                             <manifestEntries>
                                 <url>${project.url}</url>

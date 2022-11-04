@@ -1,4 +1,4 @@
-package com.github.harryssuperman.mvvm;
+package com.github.harryssuperman.javafxtutorial.mvvm;
 
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
