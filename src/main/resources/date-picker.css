@@ -1,0 +1,57 @@
+#test {
+    border-color: darkorange;
+}
+
+#date-picker {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
+
+.date-picker {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
+
+.date-picker-display-node {
+    -fx-border-color: deeppink;;
+    -fx-background-color: deeppink;
+}
+
+.combo-box-popup {
+    -fx-border-color: darkorange;
+    -fx-background-color: darkorange;
+}
+
+.date-picker-popup > * > .date-cell {
+    -fx-background-color: pink;
+}
+
+#combo-box-base {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
+
+.combo-box-popup {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
+
+#combo-box-popup {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
+
+.date-picker.date-picker-display-node.combo-box-popup {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
+
+.date-picker .date-picker-display-node .combo-box-popup {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
+
+.date-picker > date-picker-display-node > combo-box-popup {
+    -fx-border-color: aquamarine;
+    -fx-background-color: chartreuse;
+}
