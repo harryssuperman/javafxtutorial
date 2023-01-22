@@ -10,6 +10,7 @@
 
     <name>javafxtutorial</name>
     <url>https://github.com/harryssuperman/javafxtutorial</url>
+
     <developers>
         <developer>
             <id>harryssuperman</id>
@@ -96,4 +97,31 @@
         </pluginManagement>
         <defaultGoal>clean install</defaultGoal>
     </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changes-plugin</artifactId>
+                <version>2.12.1</version>
+                <configuration>
+                    <githubAPIScheme>https</githubAPIScheme>
+                    <githubAPIPort>443</githubAPIPort>
+                    <githubAPIServerId>github</githubAPIServerId>
+                    <onlyCurrentVersion>true</onlyCurrentVersion>
+                    <columnNames>Type,Key,Summary,Assignee,Status,Fix Version</columnNames>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>github-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/harryssuperman/javafxtutorial/issues</url>
+    </issueManagement>
 </project>
