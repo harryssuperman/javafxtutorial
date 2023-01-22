@@ -1,6 +1,5 @@
 package com.github.harryssuperman.javafxtutorial;
 
-import com.sun.javafx.scene.control.DatePickerContent;
 import javafx.application.Application;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -18,7 +17,6 @@ public class DatePickerExtendedExample extends Application {
         datePickerExtended.applyCss();
         DatePickerSkin datePickerSkin = new DatePickerSkin(datePickerExtended);
         Node popupContent = datePickerSkin.getNode();
-        ((DatePickerContent) popupContent).getChildren().remove(popupContent.lookup(".month-year-pane"));
         VBox vBox = new VBox(popupContent);
         Scene scene = new Scene(vBox);
         primaryStage.setScene(scene);
