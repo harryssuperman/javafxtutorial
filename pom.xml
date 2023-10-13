@@ -10,6 +10,10 @@
 
     <name>javafxtutorial</name>
     <url>https://github.com/harryssuperman/javafxtutorial</url>
+    <scm>
+        <url>https://github.com/harryssuperman/javafxtutorial</url>
+        <connection>scm:git:https://github.com/harryssuperman/javafxtutorial.git</connection>
+    </scm>
 
     <developers>
         <developer>
